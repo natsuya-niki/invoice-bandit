@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# 環境変数ファイル
+.env
+
+# IDEやエディタの設定ファイル
+.idea/
+.vscode/
+
+# OSのシステムファイル
+.DS_Store
+Thumbs.db
+
+# ダウンロードフォルダ
+downloads/

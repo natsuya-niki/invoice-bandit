@@ -19,13 +19,18 @@ yarn install
 
 `.env`ファイルを作成します。（`.env.sample`を参考に）
 
-## 4. テストの実行
+## 4. 領収書取得の実行
 
-テストを実行するには、以下のコマンドを使用します。`--profile`オプションで使用するプロファイルを指定します。
-
+以下のコマンドを使用します。
+ブラウザでの動作を確認するために`--debug`オプション、
+また、Chromeしか動作確認してないので`--project=chromium`オプションで使用するプロファイルを指定します。
 ```
-yarn playwright test tests/chocozap.spec.ts -- --profile profile1
-yarn playwright test tests/chocozap.spec.ts -- --profile profile2
+# `--profile`オプションで使用するプロファイルを指定します。
+yarn playwright test tests/chocozap.spec.ts -- --profile profile1 --project=chromium --debug
+yarn playwright test tests/chocozap.spec.ts -- --profile profile2 --project=chromium --debug
+
+yarn playwright test tests/freee.spec.ts --project=chromium --debug
+yarn playwright test tests/attcom.spec.ts --project=chromium --debug
 ```
 
 ## 5. その他のコマンド

@@ -31,6 +31,7 @@ yarn playwright test tests/chocozap.spec.ts -- --profile profile2 --project=chro
 
 yarn playwright test tests/freee.spec.ts --project=chromium --debug
 yarn playwright test tests/attcom.spec.ts --project=chromium --debug
+yarn playwright test tests/d_virtual_office.spec.ts --project=chromium --debug
 ```
 
 ## 5. その他のコマンド

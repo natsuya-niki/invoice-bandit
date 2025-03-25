@@ -12,7 +12,8 @@
 次に、必要な依存関係をインストールします。
 
 ```
-yarn install
+pnpm install
+pnpm exec playwright install
 ```
 
 ## 3. 環境変数の設定
@@ -26,40 +27,40 @@ yarn install
 また、Chromeしか動作確認してないので`--project=chromium`オプションで使用するプロファイルを指定します。
 ```
 # `--profile`オプションで使用するプロファイルを指定します。
-yarn playwright test tests/chocozap.spec.ts -- --profile profile1 --project=chromium --debug
-yarn playwright test tests/chocozap.spec.ts -- --profile profile2 --project=chromium --debug
+TEST_PROFILE=profile1 pnpm playwright test tests/chocozap.spec.ts --project=chromium --headed
+TEST_PROFILE=profile2 pnpm playwright test tests/chocozap.spec.ts --project=chromium --headed
 
-yarn playwright test tests/freee.spec.ts --project=chromium --debug
-yarn playwright test tests/attcom.spec.ts --project=chromium --debug
-yarn playwright test tests/d_virtual_office.spec.ts --project=chromium --debug
+pnpm playwright test tests/freee.spec.ts --project=chromium --headed
+pnpm playwright test tests/attcom.spec.ts --project=chromium --headed
+pnpm playwright test tests/d_virtual_office.spec.ts --project=chromium --headed
 ```
 
 ## 5. その他のコマンド
 
 以下のコマンドも利用可能です。
 
-- `yarn playwright test`  
+- `pnpm playwright test`  
   Runs the end-to-end tests.
 
-- `yarn playwright test --ui`  
+- `pnpm playwright test --ui`  
   Starts the interactive UI mode.
 
-- `yarn playwright test --project=chromium`  
+- `pnpm playwright test --project=chromium`  
   Runs the tests only on Desktop Chrome.
 
-- `yarn playwright test example`  
+- `pnpm playwright test example`  
   Runs the tests in a specific file.
 
-- `yarn playwright test --debug`  
+- `pnpm playwright test --debug`  
   Runs the tests in debug mode.
 
-- `yarn playwright codegen`  
+- `pnpm playwright codegen`  
   Auto generate tests with Codegen.
 
 We suggest that you begin by typing:
 
 ```
-yarn playwright test
+pnpm playwright test
 ```
 
 And check out the following files:

@@ -31,6 +31,13 @@ test('test', async ({ page }) => {
   await page.waitForLoadState();
 
   await page.goto('https://my.chocozap.jp/purchases');
+  const purchaseItem = page.locator('xpath=/html/body/main/div/section/ul/li[1]');
+  const purchaseText = (await purchaseItem.textContent())?.trim() || '';
+  const ymMatch = purchaseText.match(/(20\d{2})\s*[年\/\.-]\s*(\d{1,2})/);
+  const now = new Date();
+  const yyyymm = ymMatch
+    ? `${ymMatch[1]}${ymMatch[2].padStart(2, '0')}`
+    : `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}`;
   await page.locator('xpath=/html/body/main/div/section/ul/li[1]/a/p').click();
 
   // '領収書(PDF)を表示する'を右クリックしてリンクを保存
@@ -51,7 +58,7 @@ test('test', async ({ page }) => {
     const download = await downloadPromise;
 
     // ダウンロード先のパスを指定
-    const downloadPath = path.join(__dirname, `../downloads/chocozap_receipt_${profile}.pdf`); // プロファイル名を追加
+    const downloadPath = path.join(__dirname, `../downloads/chocozap_receipt_${yyyymm}_${profile}.pdf`);
     await download.saveAs(downloadPath); // PDFを保存
   } else {
     console.error('PDFのURLが取得できませんでした。');

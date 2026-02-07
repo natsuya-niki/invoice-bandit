@@ -23,9 +23,9 @@ test('test', async ({ page }) => {
   const page1 = await page1Promise;
 
   // ファイル名を取得
-  const fileNameElement = await page1.locator('xpath=/html/body/section/article/div[2]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]');
-  const fileNameText = await fileNameElement.innerText();
-  const finalFileName = `atTCOM_${fileNameText}.pdf`;
+  const invoicePeriodElement = await page1.locator('xpath=/html/body/section/article/div[2]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]');
+  const invoicePeriodText = await invoicePeriodElement.innerText();
+  const finalFileName = `atTCOM_${invoicePeriodText}.pdf`;
   
   // ページが表示されるのを待つ
   await page1.waitForLoadState('domcontentloaded');

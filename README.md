@@ -39,11 +39,9 @@ pnpm playwright test tests/d_virtual_office.spec.ts --project=chromium --headed
 
 Playwright実行で生成されるPDFは `downloads` フォルダに保存されます。ファイル名はテストごとに以下の規則です。
 
-- atTCOM: `atTCOM_${fileNameText}.pdf`（画面の表セル文字列を取得して付与）
-- atTCOM（PlayLite実行例）: `fileNameText = 2026年02月請求分` → `atTCOM_2026年02月請求分.pdf`
-- DMM Virtual Office: `download.suggestedFilename()` をそのまま使用。取得できない場合は `DMM_VO_receipt_yyyymm.pdf`
-- DMM Virtual Office（実行例）: `DMMVO_202601.pdf`
-- freee: 領収書PDFのインボイス番号付きファイル名を使用（例: `領収書_INV12345678.pdf`）
+- atTCOM: `atTCOM_2026年02月請求分.pdf`
+- DMM Virtual Office: `DMMVO_202601.pdf` 取得できない場合は `DMM_VO_receipt_yyyymm.pdf`
+- freee: `領収書_INV12345678.pdf`
 - chocozap: `chocozap_receipt_${YYYYMM}_${profile}.pdf`（`TEST_PROFILE` 環境変数。未設定は `profile1`）
 
 出力先: `./downloads`

@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
+import { logDownloadedFile } from './utils/downloads';
 
 // 環境変数の読み込み
 dotenv.config();
@@ -32,5 +33,5 @@ test('test', async ({ page }) => {
 
   const pdfPath = path.join(__dirname, '../downloads', finalFileName);
   await page1.pdf({ path: pdfPath, format: 'A4', printBackground: true});
-  console.log(`PDFが保存されました: ${pdfPath}`);
+  await logDownloadedFile(pdfPath);
 });

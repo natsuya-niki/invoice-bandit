@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 import dotenv from 'dotenv';
+import { saveAndLogDownload } from './utils/downloads';
 
 dotenv.config(); // 環境変数を読み込む
 
@@ -59,7 +60,7 @@ test('test', async ({ page }) => {
 
     // ダウンロード先のパスを指定
     const downloadPath = path.join(__dirname, `../downloads/chocozap_receipt_${yyyymm}_${profile}.pdf`);
-    await download.saveAs(downloadPath); // PDFを保存
+    await saveAndLogDownload(download, downloadPath); // PDFを保存
   } else {
     console.error('PDFのURLが取得できませんでした。');
   }

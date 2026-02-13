@@ -1,0 +1,14 @@
+[2026-02-03T12:46:46.214868+00:00] startup: base_url=https://chatgpt.com/backend-api path_style=wham
+[2026-02-03T12:46:46.262530+00:00] auth: mode=ChatGPT account_id=d7d7333e-266e-4935-b665-95c29cada210
+[2026-02-03T12:46:46.262944+00:00] auth: set ChatGPT-Account-Id header: d7d7333e-266e-4935-b665-95c29cada210
+[2026-02-03T12:46:46.268241+00:00] startup: wham_force_internal=false ua=codex_cli_rs/0.94.0 (Mac OS 15.7.3; arm64) xterm-256color (codex_cloud_tasks_tui)
+[2026-02-03T12:46:46.320331+00:00] env: git origins: ["https://github.com/natsuya-niki/invoice-bandit"]
+[2026-02-03T12:46:46.320554+00:00[] 2026-02-03T12:46:46.320348+00:00env: parsed HTTP GitHub origin => natsuya-niki/invoice-bandit] 
+env: parsed HTTP GitHub origin => natsuya-niki/invoice-bandit
+[2026-02-03T12:46:46.321948+00:00] env: GET https://chatgpt.com/backend-api/wham/environments/by-repo/github/natsuya-niki/invoice-bandit
+[2026-02-03T12:46:47.447933+00:00] http.list_tasks: env=<all> limit=20 cursor_in=<none> cursor_out=<none> items=0
+[2026-02-03T12:46:47.449476+00:00] refresh.apply: env=<all> count=0
+[2026-02-03T12:46:49.821585+00:00] env: status=200 OK content-type=application/json
+[2026-02-03T12:46:49.822272+00:00] env: by-repo returned 0 env(s) for natsuya-niki/invoice-bandit
+[2026-02-03T12:46:49.826552+00:00] env: GET https://chatgpt.com/backend-api/wham/environments
+[2026-02-03T12:46:50.314892+00:00] env: status=200 OK content-type=application/json

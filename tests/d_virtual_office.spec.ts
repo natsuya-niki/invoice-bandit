@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 import dotenv from 'dotenv';
+import { saveAndLogDownload } from './utils/downloads';
 
 // 環境変数を読み込む
 dotenv.config();
@@ -36,5 +37,5 @@ test('test', async ({ page }) => {
   // ダウンロードしたファイル名を取得
   const fileName = download.suggestedFilename() || 'DMM_VO_receipt_yyyymm.pdf'; // デフォルト名を設定
   const downloadPath = path.join(__dirname, `../downloads/${fileName}`);
-  await download.saveAs(downloadPath);
+  await saveAndLogDownload(download, downloadPath);
 });

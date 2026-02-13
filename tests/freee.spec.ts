@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 import dotenv from 'dotenv';
+import { saveAndLogDownload } from './utils/downloads';
 
 dotenv.config(); // 環境変数を読み込む
 
@@ -78,7 +79,7 @@ test('test', async ({ page }) => {
 
         // ダウンロード先のパスを指定
         const downloadPath = path.join(__dirname, '../downloads', fileName); // downloadsフォルダに保存
-        await download.saveAs(downloadPath); // PDFを保存
+        await saveAndLogDownload(download, downloadPath); // PDFを保存
 
         // ダウンロードが完了した後にポップアップを閉じる
         console.log('PDFがダウンロードされました。領収書画面を閉じます。');

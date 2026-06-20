@@ -7,6 +7,10 @@ import { logDownloadedFile } from './utils/downloads';
 dotenv.config();
 
 test('test', async ({ page }) => {
+  test.setTimeout(5 * 60_000);
+  page.setDefaultTimeout(5 * 60_000);
+  page.setDefaultNavigationTimeout(5 * 60_000);
+
   await page.goto('https://www.t-com.ne.jp/hplogin/');
   await page.getByRole('link', { name: 'マイページへログインする' }).click();
   await page.getByRole('textbox', { name: '[ユーザID入力例]A01z123456' }).fill(process.env.TCOM_USER_ID || '');

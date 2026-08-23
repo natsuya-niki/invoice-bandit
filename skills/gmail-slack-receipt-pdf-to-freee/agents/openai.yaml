@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slack Receiptをfreeeへ登録"
+  short_description: "SlackのReceipt PDFをfreeeへ送り証憑日を受信日に設定"
+  default_prompt: "Slackから届いたReceipt PDFをfreeeファイルボックスへ送り、メール受信日を証憑日に設定する"

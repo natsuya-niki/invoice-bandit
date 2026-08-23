@@ -1,0 +1,4 @@
+interface:
+  display_name: "freee領収書インボイス情報コピー"
+  short_description: "freeeの過去ファイルのインボイス情報を直近ファイルへコピー"
+  default_prompt: "freeeファイルボックスの過去ファイルから直近ファイルへインボイス情報をコピーして確認する"

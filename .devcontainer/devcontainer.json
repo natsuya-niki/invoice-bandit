@@ -1,0 +1,27 @@
+{
+  "name": "Invoice Bandit",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "remoteUser": "node",
+  "updateRemoteUserUID": true,
+  "features": {
+    "ghcr.io/devcontainers/features/pnpm:2": {
+      "version": "10.15.0"
+    },
+    "ghcr.io/devcontainers/features/playwright:1": {
+      "version": "latest",
+      "installDeps": true
+    }
+  },
+  "containerEnv": {
+    "PLAYWRIGHT_BROWSERS_PATH": "0"
+  },
+  "postCreateCommand": "pnpm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-ceintl.vscode-language-pack-ja",
+        "ms-playwright.playwright"
+      ]
+    }
+  }
+}

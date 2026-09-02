@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google Payments請求書をfreeeへ送信"
+  short_description: "Google Paymentsの請求書PDFをfreeeファイルボックスへ送信"
+  default_prompt: "GmailのGoogle Payments請求書PDFをfreeeファイルボックスへ送信する"

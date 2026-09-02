@@ -1,0 +1,4 @@
+interface:
+  display_name: "chocoZAP領収書をfreee取引へ登録"
+  short_description: "choco1・choco2のPDFを購入日でfreee取引に登録"
+  default_prompt: "choco1またはchoco2の領収書を取得し、PDFの購入日と宛名を使ってfreee取引を登録する"

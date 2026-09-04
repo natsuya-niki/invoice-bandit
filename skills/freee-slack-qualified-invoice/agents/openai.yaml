@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slack領収書のインボイス登録"
+  short_description: "Slack領収書をfreeeで適格請求書として設定"
+  default_prompt: "$freee-slack-qualified-invoice を使って、Slackの領収書をfreeeで適格請求書として登録してください。"
